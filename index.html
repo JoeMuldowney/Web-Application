@@ -24,6 +24,7 @@
         background-color: #263238; /* Dark Blue-Grey */
         color: white;
       }
+      
     </style>
   </head>
   <body class="text-center py-5">
@@ -33,25 +34,39 @@
       <h3 class="text-success">Computer Science</h3>
       <h4 class="text-danger">Hello, World!</h4>
       <p class="lead mt-4">Welcome to my dynamic webpage!</p>
+
+      <img id="timeImage" class="img-fluid mt-4" style="max-width: 500px;" alt="Time of day image" />
+
+      
     </div>
 
     <!-- JavaScript to change background based on time -->
     <script>
       const hour = new Date().getHours();
       const body = document.body;
+      const img = document.getElementById("timeImage");
 
       if (hour >= 6 && hour < 12) {
         body.classList.add("morning");
+        img.src = "images/moon.jpg";
+        img.alt = "Morning img";
+        
       } else if (hour >= 12 && hour < 18) {
         body.classList.add("afternoon");
+        img.src = "images/daytime.jpg";
+        img.alt = "Afternoon img";
+        
       } else if (hour >= 18 && hour < 21) {
         body.classList.add("evening");
+        img.src = "images/moon.jpg";
+        img.alt = "Night img";
+        
       } else {
         body.classList.add("night");
+        img.src = "images/moon.jpg";
+        img.alt = "Night img";
+       
       }
     </script>
-
-    <!-- Bootstrap Bundle JS (optional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
